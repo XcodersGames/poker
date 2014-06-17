@@ -6,7 +6,7 @@ package com.xcoders.gameitems;
 
 /**
  *
- * @author ravindu
+ * @author Ishantha
  */
 public class CommonUtils {
     

@@ -4,9 +4,11 @@
  */
 package com.xcoders.gameitems;
 
+import java.util.Random;
+
 /**
  *
- * @author ravindu
+ * @author Ishantha
  */
 public class CardPack {
     
@@ -43,8 +45,24 @@ public class CardPack {
         }
     }
     
-    public Card[] getCards(){
-        return cards;
+     public Card[] Shuffle(){
+        
+        int newC;
+	Card c;
+	Random ran = new Random();
+                
+	for (int i = 0; i < 52; i++) {
+		
+            newC = ran.nextInt(52);
+            c = cards[i];
+            cards[i] = cards[newC];
+            cards[newC] = c;                      
+        }
+        return cards;   
     }
-    
-}
+     
+    public Card[] getCards(){
+               
+        return cards;   
+    }
+ }

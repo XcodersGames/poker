@@ -13,6 +13,8 @@ import java.util.Random;
 public class CardPack {
     
     private Card[] cards;
+    private Card[] cd;
+    private Card c;
 
     public CardPack() {
         cards = new Card[52];
@@ -45,10 +47,14 @@ public class CardPack {
         }
     }
     
+    public Card[] getCards(){
+        
+        return cards;
+    }
+    
      public Card[] Shuffle(){
         
-        int newC;
-	Card c;
+        int newC;	
 	Random ran = new Random();
                 
 	for (int i = 0; i < 52; i++) {
@@ -61,8 +67,21 @@ public class CardPack {
         return cards;   
     }
      
-    public Card[] getCards(){
-               
-        return cards;   
+    public Card[] getCards(int n){
+          
+        cd = new Card[n];
+        cards=Shuffle();
+         
+        cd[0]=cards[0];
+        cd[1]=cards[1];
+        cd[2]=cards[2];
+        return cd;   
+    }
+    
+    public Card getCard(){
+          
+        cards=Shuffle();       
+        c=cards[0];      
+        return c;   
     }
  }

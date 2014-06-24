@@ -14,15 +14,21 @@ public class Player {
     
     // First, 3 cards in each player's hand
     public final static int MAX_CARD = 3;
-    private Card cards[];
+    private Card hand[];
     private Double money;
     private Double bidAmount;
     
     public Player(){
-        cards=new Card[MAX_CARD];
+        hand=new Card[MAX_CARD];
     }
-    public Card[] getCards(){
-        return cards;
+    
+    // get 3 cards from Cardpack 
+    // vijani says that , this method is to take 3 cards from pack for a player :p
+    public Card[] getHand(CardPack pack){
+        for(int i=0;i<MAX_CARD;i++){
+            hand[i]=pack.getCardFromTop();
+        }
+        return hand;
     }
     
 }

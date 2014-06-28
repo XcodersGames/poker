@@ -51,8 +51,18 @@ public class NewPl extends javax.swing.JFrame {
         jLabel3.setText("Confirm Password :-");
 
         jButton1.setText("Ok");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Cancel");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Back");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +71,7 @@ public class NewPl extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("jLabel4");
+        jLabel4.setText(".");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -144,6 +154,29 @@ public class NewPl extends javax.swing.JFrame {
         setVisible(false);
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        String un,pw,cpw;
+        un=jTextField1.getText();
+        pw=jPasswordField1.getText();
+        cpw=jPasswordField2.getText();
+        jLabel4.setText(".");  
+        
+        if(!pw.equals(cpw)){
+            jLabel4.setText("Password not match.!!!!");
+            jPasswordField1.setText("");
+            jPasswordField2.setText("");
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        jLabel4.setText(".");  
+        jTextField1.setText("");       
+        jPasswordField1.setText("");
+        jPasswordField2.setText("");
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
